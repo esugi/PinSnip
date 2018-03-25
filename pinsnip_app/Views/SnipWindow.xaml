@@ -1,0 +1,32 @@
+﻿<Window x:Class="pinsnip_app.Views.SnipWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:pinsnip_app.Views"
+        mc:Ignorable="d"
+        Title="SnipWindow" 
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="Manual"
+        ShowInTaskbar="False"
+        MouseLeftButtonDown="SnipScreen_Click"
+        MouseMove="SnipScreen_Move"
+        Left="0" Top="0">
+    
+    <Grid>
+        <Image x:Name="screenShotImg" Source="{Binding TargetNullValue={x:Null}}" Stretch="Uniform"/>
+        <Path x:Name="pathOutline" Fill="#66FFFFFF" Stroke="DarkRed">
+            <Path.Data>
+                <CombinedGeometry GeometryCombineMode="Xor">
+                    <CombinedGeometry.Geometry1>
+                        <RectangleGeometry x:Name="maskRect"/>
+                    </CombinedGeometry.Geometry1>
+                    <CombinedGeometry.Geometry2>
+                        <RectangleGeometry x:Name="snipSec"/>
+                    </CombinedGeometry.Geometry2>
+                </CombinedGeometry>
+            </Path.Data>
+        </Path>
+    </Grid>
+</Window>

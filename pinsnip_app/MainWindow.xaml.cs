@@ -22,13 +22,13 @@ namespace pinsnip_app
     /// </summary>
     public partial class MainWindow : Window
     {
-        private CroppedBitmap snipBmpSource;
-        Views.SnipWindow snipWindow;
+        public CroppedBitmap snipBmpSource;
+        public Views.SnipWindow snipWindow;
 
         public MainWindow()
         {
             InitializeComponent();
-            //createBMP();
+            createBMP();
             
         }
 
@@ -44,6 +44,7 @@ namespace pinsnip_app
             myImage.Source = myBI;
             snipImgDisplay.Source = myBI;
         }
+
         private void BorderMouse_Click(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Debug.WriteLine("Testing...Click");
@@ -97,24 +98,33 @@ namespace pinsnip_app
             }
         }
 
-        private void NewSnip_Click(object sender, RoutedEventArgs e)
+        public async void showNotification(String message)
         {
-            this.Hide();
-            snipWindow = new Views.SnipWindow(this);
-            Application.Current.MainWindow = snipWindow;  
+            Overlay.Visibility = Visibility.Visible;
+            overlayMessage.Text = message;
+            await Task.Delay(4000);
+            Overlay.Visibility = Visibility.Collapsed;
         }
 
-        private void CopySnip_Click(object sender, RoutedEventArgs e)
-        {
-            if(snipBmpSource == null)
-            {
+        //private async void NewSnip_Click(object sender, RoutedEventArgs e)
+        //{
+        //    this.Hide();
+        //    await Task.Delay(400);
+        //    snipWindow = new Views.SnipWindow(this);
+        //    Application.Current.MainWindow = snipWindow;  
+        //}
 
-            }
-            else
-            {
-                Clipboard.SetImage(snipBmpSource);
-            }
-        }
+        //private void CopySnip_Click(object sender, RoutedEventArgs e)
+        //{
+        //    if(snipBmpSource == null)
+        //    {
+
+        //    }
+        //    else
+        //    {
+        //        Clipboard.SetImage(snipBmpSource);
+        //    }
+        //}
 
         public void exitSnipWindow(CroppedBitmap cb)
         {

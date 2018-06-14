@@ -52,6 +52,8 @@
                              Cursor="Arrow"/>
                 </DockPanel>
 
+
+                
             <DockPanel Style="{StaticResource MenuPanel}">
                 <StackPanel>
                     <Image Source="Assets/pinsnip_icon.png" Height="45" HorizontalAlignment="Left" Margin="15"/>
@@ -59,30 +61,26 @@
                     <Button x:Name="Snip_Button" Content="Snip" Style="{StaticResource MenuButtonStyle}"/>
                 </StackPanel>
             </DockPanel>
-
+          
             <Grid Background="White" Margin="10">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="5*"/>
                     <RowDefinition Height="1*"/>
                 </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Grid Grid.Row="0" Grid.ColumnSpan="5" Background="#e8edf3" Margin="0,0,0,10">
+                <Grid Grid.Row="0" Background="#e8edf3" Margin="0,0,0,10">
+                    <Grid x:Name="Overlay" Panel.ZIndex="1000" Visibility="Collapsed" Height="50" VerticalAlignment="Top" >
+                        <Grid.Background>
+                            <SolidColorBrush Color="Black" Opacity=".5"/>
+                        </Grid.Background>
+                        <TextBlock x:Name="overlayMessage" Margin="10, 0, 10, 0" VerticalAlignment="Center" Foreground="White"/>
+                    </Grid>
                     <Image x:Name="snipImgDisplay" Source="{Binding TargetNullValue={x:Null}}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </Grid>
-                <Button Grid.Row="1" Grid.Column="0" Content="New" Click="NewSnip_Click"/>
-                <Button Grid.Row="1" Grid.Column="1" Content="Save"/>
-                <Button Grid.Row="1" Grid.Column="2" Content="Copy" Click="CopySnip_Click"/>
-                <Button Grid.Row="1" Grid.Column="3" Content="Edit"/>
-                <Button Grid.Row="1" Grid.Column="4" Content="Pin"/>
-            </Grid>
                 
-            </DockPanel>
-        
+                </Grid>
+                <Frame x:Name="optionsFrame" Grid.Row="1" Source="Views/OptionsPage.xaml" NavigationUIVisibility="Hidden"/>
+            </Grid>
+
+
+        </DockPanel>
     </Border>
 </Window>

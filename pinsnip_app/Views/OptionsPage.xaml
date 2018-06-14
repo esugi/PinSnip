@@ -1,0 +1,25 @@
+﻿<Page x:Class="pinsnip_app.Views.OptionsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pinsnip_app.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="OptionsPage">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="0" Content="New" Click="NewSnip_Click"/>
+        <Button Grid.Column="1" Content="Save" Click="SaveSnip_Click" x:Name="saveButton"/>
+        <Button Grid.Column="2" Content="Copy" Click="CopySnip_Click"/>
+        <Button Grid.Column="3" Content="Edit"/>
+        <Button Grid.Column="4" Content="Pin"/>
+    </Grid>
+</Page>

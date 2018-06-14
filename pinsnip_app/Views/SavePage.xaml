@@ -1,0 +1,37 @@
+﻿<Page x:Class="pinsnip_app.Views.SavePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:pinsnip_app.Views"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+      Title="SavePage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="5*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Path"/>
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Browse" Margin="10, 0 , 10, 0" Click="Browse_Click"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" />
+        <TextBlock Grid.Row="0" Grid.Column="2" Text="Name" />
+        <TextBox Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" TextWrapping="NoWrap" Margin="10, 0 , 10, 0" Padding="10"/>
+        <TextBlock Grid.Row="0" Grid.Column="4" Text="Type" />
+        <ComboBox Text="Type" Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center">
+            <ComboBoxItem Name="cbi1">JPEG</ComboBoxItem>
+            <ComboBoxItem Name="cbi2">PNG</ComboBoxItem>
+        </ComboBox>
+        <Button Grid.RowSpan="2" Grid.Column="6" Content="Save" Margin="10" Click="Save_Click"/>
+    </Grid>
+</Page>

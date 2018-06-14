@@ -31,8 +31,8 @@ namespace pinsnip_app.Views
         {
             InitializeComponent();
             // adjust where to place based on location of position so that it doesnt go off screen
-            Window.GetWindow(this).Top = Mouse.GetPosition(Window.GetWindow(snipWindow)).Y - Window.GetWindow(this).Height;
-            Window.GetWindow(this).Left = Mouse.GetPosition(Window.GetWindow(snipWindow)).X - Window.GetWindow(this).Width;
+            //Window.GetWindow(this).Top = Mouse.GetPosition(Window.GetWindow(snipWindow)).Y - Window.GetWindow(this).Height;
+            //Window.GetWindow(this).Left = Mouse.GetPosition(Window.GetWindow(snipWindow)).X - Window.GetWindow(this).Width;
 
             this.snipWindow = snipWindow;
             this.Show();

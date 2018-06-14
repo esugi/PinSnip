@@ -10,7 +10,7 @@
 
     <Style x:Key="ValidateIconStyle" TargetType="{x:Type Button}">
         <Setter Property="FontFamily" Value="Webdings" />
-        <Setter Property="FontSize" Value="10" />
+        <Setter Property="FontSize" Value="20" />
         <Setter Property="Foreground" Value="White" />
         <Setter Property="Background" Value="#f7ad96" />
         <Setter Property="TextBlock.TextDecorations" Value="{x:Null}" />

@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:pinsnip_app.Views"
         mc:Ignorable="d"
-        Title="SnipValidationWindow" Height="25" Width="100"
+        Title="SnipValidationWindow" Height="100" Width="400"
         WindowStyle="None"
         ResizeMode="NoResize"
-        WindowStartupLocation="Manual"
+        WindowStartupLocation="CenterScreen"
         ShowInTaskbar="False"
         Topmost="True" >
 
